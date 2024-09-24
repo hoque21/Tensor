@@ -1,5 +1,4 @@
 import os
-
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
@@ -35,4 +34,4 @@ model.fit(x_test,y_test,batch_size=64, verbose=2)
 
 
 
-print('hello')
+print('hello ! i am done')

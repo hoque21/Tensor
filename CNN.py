@@ -9,6 +9,7 @@ from tensorflow.keras import layers, regularizers
 x_train = x_train.astype("float32") / 255.0
 x_test = x_test.astype("float32") / 255.0
 
+
 # Define the model using the Functional API
 def my_model():
     inputs = keras.Input(shape=(32, 32, 3))
@@ -31,7 +32,7 @@ def my_model():
     outputs = layers.Dense(10)(x)  # Output layer for 10 classes
     
     # Build the model
-    model = keras.Model(inputs=inputs, outputs=outputs)
+    model = keras.Model(inputs, outputs)
     return model
 
 # Instantiate the model
@@ -48,7 +49,6 @@ model.compile(
 )
 
 # Train the model
-model.fit(x_train, y_train, batch_size=64, epochs=150, verbose=2)
+model.fit(x_train, y_train, batch_size=64, epochs=10, verbose=2)
 
 # Evaluate the model on the test data
-model.evaluate(x_test, y_test, batch_size=64, verbose=2)
